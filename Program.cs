@@ -24,13 +24,35 @@ void PrintArray(string[] arr)
     Console.Write("]");
 }
 
+string[] ThreeChar(string[] arr)
+{
+    int lenght = 3;
+    int j = 0;
+    string[] array = new string [5];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i].Length <= lenght)
+        {
+            array[j] = arr[i];
+            j++;
+        }
+    }
+    return array;
+}
 
-Console.WriteLine("Какое количество чисел вы хотите ввести?");
-int size = Convert.ToInt32(Console.ReadLine());
 
-Console.WriteLine("Введите числа через нажатие клавиши Enter");
+
+
+
+//Console.WriteLine("Какое количество элементов вы хотите ввести?");
+int size = 5;//Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите элементы через нажатие клавиши Enter");
 
 string[] array = CreateArray(size);
 PrintArray(array);
 
 Console.Write(" ---> ");
+
+string[] newArray = ThreeChar(array);
+PrintArray(newArray);
