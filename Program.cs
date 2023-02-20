@@ -28,7 +28,7 @@ string[] ThreeChar(string[] arr)
 {
     int lenght = 3;
     int j = 0;
-    string[] array = new string [5];
+    string[] array = new string [arr.Length];
     for (int i = 0; i < arr.Length; i++)
     {
         if (arr[i].Length <= lenght)
@@ -37,15 +37,25 @@ string[] ThreeChar(string[] arr)
             j++;
         }
     }
-    return array;
+    string[] ar = new string[array.Length];
+    int count = 0;
+    for (int k = 0; k < array.Length; k++)
+    {
+        if(array[k] != null)
+        count++;
+    }
+    string[]newArr = new string[count];
+    for (int m = 0; m < newArr.Length; m++)
+    {
+        newArr[m] = array[m];
+    }
+    return newArr;
 }
 
 
 
-
-
-//Console.WriteLine("Какое количество элементов вы хотите ввести?");
-int size = 5;//Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Какое количество элементов вы хотите ввести?");
+int size = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine("Введите элементы через нажатие клавиши Enter");
 
